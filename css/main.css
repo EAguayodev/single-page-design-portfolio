@@ -1,10 +1,10 @@
-*{
+* {
     box-sizing: border-box;
     margin: 0;
     padding: 0;
 }
 
-:root{
+:root {
     --black: #030303;
     --galactic-blue: #755CDE;
     --summer-yellow: #F6A560;
@@ -16,16 +16,17 @@
     --seashell: #FFF7F0;
 }
 
-body{
+body {
     font-family: "Plus Jakarta Sans", sans-serif;
     background-color: #faf0e8;
 }
- nav{
+
+nav {
     display: flex;
     justify-content: space-around;
     align-items: center;
     padding-top: 3rem;
- }
+}
 
 .btn {
     color: var(--seashell);
@@ -39,7 +40,7 @@ body{
     background: var(--black);
 }
 
-.btn-nav-consult:hover{
+.btn-nav-consult:hover {
     background-color: var(--galactic-blue);
 }
 
@@ -51,11 +52,11 @@ body{
     padding-top: 7rem;
 }
 
-.heading-box-row h1{
+.heading-box-row h1 {
     font-size: 3.5rem;
 }
 
-.heading-box-row p{
+.heading-box-row p {
     color: var(--medium-brown);
     text-align: center;
     width: 40rem;
@@ -69,15 +70,37 @@ body{
 
 .grid-row-spread {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
+    grid-template-areas:
+        "graphic ux apps"
+        "graphic illustration illustration"
+        "photo motion motion";
+    grid-template-columns: repeat(1, 1fr);
     justify-content: center;
-    gap: 20px;
 }
 
-.middle-3-grid{
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 20px;
+.graphic-box {
+    grid-area: graphic;
+}
+
+.ux-box {
+    grid-area: ux;
+}
+
+.apps-box {
+    grid-area: apps;
+}
+
+.illustrations-box {
+    grid-area: illustration;
+}
+
+.photo-box {
+    grid-area: photo;
+}
+
+.motion-graphics-box {
+    grid-area: motion;
 }
 
 .graphic-box {
@@ -87,16 +110,17 @@ body{
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     align-items: center;
-    width: 354px;
-    height: 364px;
+    max-width: 354px;
+    width: 100%;
+    min-height: 364px;
 }
 
-.pattern-graphic{
+.pattern-graphic {
     position: relative;
     top: -4rem;
 }
 
-.graphic-box p{
+.graphic-box p {
     position: relative;
     top: 9rem;
     left: 2rem;
@@ -109,16 +133,17 @@ body{
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     align-items: flex-end;
-    width: 164px;
-    height: 182px;
+    max-width: 164px;
+    width: 100%;
+    min-height: 182px;
 }
 
-.pattern-ui{
+.pattern-ui {
     position: relative;
     top: -6rem;
 }
 
-.ux-box p{
+.ux-box p {
     position: relative;
     top: -1rem;
     left: 1rem;
@@ -131,16 +156,17 @@ body{
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     align-items: flex-end;
-    width: 164px;
-    height: 182px;
+    width: 100%;
+    max-width: 164px;
+    min-height: 182px;
 }
 
-.pattern-apps{
+.pattern-apps {
     position: relative;
     top: -6rem;
 }
 
-.apps-box p{
+.apps-box p {
     position: relative;
     left: 1rem;
     top: -1rem;
@@ -154,18 +180,18 @@ body{
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     align-items: flex-end;
-    width: 354px;
-    height: 158px;
-    margin-top: 1.5rem;
+    max-width: 354px;
+    width: 100%;
+    min-height: 158px;
 }
 
-.pattern-illustration{
+.pattern-illustration {
     position: relative;
     top: -4rem;
-    left: 2rem;
+    left: 0;
 }
 
-.illustrations-box p{
+.illustrations-box p {
     position: relative;
     left: 1rem;
     top: -1rem;
@@ -178,16 +204,17 @@ body{
     grid-template-columns: repeat(2, 1fr);
     align-items: flex-end;
     color: var(--seashell);
-    width: 354px;
-    height: 182px;
+    max-width: 354px;
+    width: 100%;
+    min-height: 182px;
 }
 
-.pattern-photo-img{
+.pattern-photo-img {
     position: relative;
     top: -6rem;
 }
 
-.photo-box p{
+.photo-box p {
     position: relative;
     left: 1rem;
     top: -1rem;
@@ -200,17 +227,17 @@ body{
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     align-items: flex-end;
-    width: 354px;
-    height: 158px;
-    margin-top: 1.5rem;
+    width: 100%;
+    max-width: 354px;
+    min-height: 158px;
 }
 
-.pattern-motion-graphic{
+.pattern-motion-graphic {
     position: relative;
     top: -4rem;
 }
 
-.motion-graphics-box p{
+.motion-graphics-box p {
     position: relative;
     left: 1rem;
     top: -1rem;
@@ -226,12 +253,12 @@ body{
     align-items: center;
 }
 
-.consult-row h2{
+.consult-row h2 {
     font-size: 2.5rem;
     width: 33.75rem;
 }
 
-.consult-row p{
+.consult-row p {
     color: var(--medium-brown);
     margin-bottom: 2rem;
     width: 540px;
@@ -248,7 +275,7 @@ body{
     background-color: var(--light-red);
 }
 
-.btn-consult-2:hover{
+.btn-consult-2:hover {
     background-color: var(--summer-yellow);
 }
 
@@ -256,12 +283,12 @@ body{
     padding: 120px 0;
 }
 
-.work-section h3{
+.work-section h3 {
     font-size: 2rem;
     text-align: center;
 }
 
-.carousel{
+.carousel {
     overflow: hidden;
     margin: auto;
 }
@@ -269,12 +296,13 @@ body{
 .work-row {
     display: flex;
     transition: transform 0.3s ease;
-    gap: 30px;    
+    gap: 30px;
 }
 
-.work-row img{
+.work-row img {
     flex: 0 0 33.333%;
     width: 100%;
+    max-width: 540px;
     object-fit: cover;
     height: 100%;
     border-radius: 10px;
@@ -288,7 +316,7 @@ body{
     border: none;
 }
 
-.arrow-icon:hover{
+.arrow-icon:hover {
     background-color: var(--galactic-blue);
 }
 
@@ -296,8 +324,6 @@ body{
     display: flex;
     justify-content: center;
 }
-
-/* .booking-row {} */
 
 .book-padding-banner {
     background-color: var(--black);
@@ -310,7 +336,7 @@ body{
     max-width: 100%;
 }
 
-.book-padding-banner h3{
+.book-padding-banner h3 {
     color: var(--seashell);
     font-size: 2.5rem;
 }
@@ -321,11 +347,11 @@ body{
     width: 33.75rem;
 }
 
-.btn-booking{
+.btn-booking {
     background-color: var(--light-red);
 }
 
-.btn-booking:hover{
+.btn-booking:hover {
     background-color: var(--summer-yellow);
 }
 
@@ -333,76 +359,98 @@ body{
     background-color: var(--black);
 }
 
-.btn-footer:hover{
+.btn-footer:hover {
     background-color: var(--galactic-blue);
 }
 
-@media(max-width: 1024px){
+@media(max-width: 1024px) {
     .heading-box-row h1 {
         font-size: 2.75rem;
     }
 
-    .heading-box-row p{
+    .heading-box-row p {
         width: 31rem;
     }
 
-    .grid-row-spread{
-        grid-template-columns: repeat(2, 1fr);
+    .grid-row-spread {
+        grid-template-areas:
+            "graphic ux apps"
+            "illustration"
+            "photo motion";
+        grid-template-columns: repeat(1, 1fr);
     }
 
-    .consult-row h2{
+    .consult-row h2 {
         font-size: 2rem;
         width: 21;
     }
 
-    .consult-row p{
+    .consult-row p {
         width: 21.188rem;
     }
 
-    .book-padding-banner{
+    .book-padding-banner {
         flex-direction: column;
         align-items: center;
         text-align: center;
         width: 690px;
     }
 
-    .book-padding-banner h3{
+    .book-padding-banner h3 {
         font-size: 2rem;
     }
 }
 
-@media(max-width: 768px){
+@media(max-width: 768px) {
     .heading-box-row h1 {
-            font-size: 2.25rem;
-            text-align: center;
+        font-size: 2.25rem;
+        text-align: center;
     }
 
     .heading-box-row p {
         width: 17.813rem;
     }
 
+
     .grid-row-spread {
-        grid-template-columns: repeat(1, 1fr);
+        grid-template-areas:
+            "graphic graphic"
+            "ux apps"
+            "illustration illustration"
+            "photo photo"
+            "motion motion";
+        grid-template-columns: repeat(2, 1fr);
     }
 
-    .consult-row{
+    .apps-box{
+        position: static;
+    }
+
+    .consult-row {
+        display: flex;
         flex-direction: column;
         justify-content: center;
         align-items: center;
     }
 
-    .consult-row h2{
+    .text-box{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .consult-row h2 {
         font-size: 1.625rem;
         text-align: center;
     }
 
-    .consult-row p{
+    .consult-row p {
         text-align: center;
         font-size: 1rem;
         width: 343px;
     }
 
-    .hero-image{
+    .hero-image {
         right: 0;
         width: 343px;
     }
@@ -414,11 +462,11 @@ body{
         width: 343px;
     }
 
-    .book-padding-banner h3{
+    .book-padding-banner h3 {
         font-size: 1.625rem;
     }
 
-    .book-padding-banner p{
+    .book-padding-banner p {
         width: 295px;
     }
 }
