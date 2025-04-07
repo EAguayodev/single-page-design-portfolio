@@ -290,7 +290,19 @@ nav {
 
 .carousel {
     overflow: hidden;
-    margin: auto;
+    width: 100%;
+}
+
+#slides-container {
+    display: flex;
+    width: 100%;
+    overflow-x: hidden;
+    scroll-behavior: smooth;
+}
+
+.slide {
+    flex-shrink: 0;
+    width: 100%;
 }
 
 .work-row {
@@ -299,11 +311,19 @@ nav {
     gap: 30px;
 }
 
+.arrow-box{
+    display: flex;
+    justify-content: center;
+}
+
+.arrow-box > button{
+    margin:  0 5px;
+}
+
 .work-row img {
     flex: 0 0 33.333%;
     width: 100%;
     max-width: 540px;
-    object-fit: cover;
     height: 100%;
     border-radius: 10px;
 }

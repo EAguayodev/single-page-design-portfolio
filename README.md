@@ -29,20 +29,17 @@ Users should be able to:
 
 ### Screenshot
 
-![](./screenshot.jpg)
-
-Add a screenshot of your solution. The easiest way to do this is to use Firefox to view your project, right-click the page and select "Take a Screenshot". You can choose either a full-height screenshot or a cropped one based on how long the page is. If it's very long, it might be best to crop it.
-
-Alternatively, you can use a tool like [FireShot](https://getfireshot.com/) to take the screenshot. FireShot has a free option, so you don't need to purchase it. 
-
-Then crop/optimize/edit your image however you like, add it to your project, and update the file path in the image above.
+![](./assets/Frontend-Mentor-Single-page-design-portfolio-04-07-2025_05_56_PM.png)
 
 ### Links
 
-- Solution URL: [Add solution URL here](https://your-solution-url.com)
-- Live Site URL: [Add live site URL here](https://your-live-site-url.com)
+- Solution URL: [Github](https://your-solution-url.com)
+- Live Site URL: [Vercel](https://single-page-design-portfolio-iota-ruddy.vercel.app/)
 
 ## My process
+For this project, I began by carefully planning the HTML structure based on the design layout. I focused on writing clean, semantic markup and then layered in styling with CSS, using a desktop-first approach. Once the layout was in place, I implemented CSS Grid to handle the design sections that required more structured alignment. I made adjustments as I went, constantly referencing the design to keep things pixel-consistent. Each part of the build was broken down step-by-step, making the process more manageable and efficient.
+
+
 
 ### Built with
 
@@ -60,32 +57,72 @@ Use this section to recap over some of your major learnings while working throug
 To see how you can add code snippets, see below:
 
 ```html
-
+ <div class="grid-row-spread">
+      <div class="graphic-box">
+        <p>Graphic Design</p>
+        <img class="pattern-graphic" src="assets/pattern-graphic-design.svg" alt="pattern graphic design">
+      </div>
+      <div class="ux-box">
+        <p>UI/UX</p>
+        <img class="pattern-ui" src="assets/pattern-ui-ux.svg" alt="UX/UI img design">
+      </div>
+      <div class="apps-box">
+        <p>Apps</p>
+        <img class="pattern-apps" src="assets/pattern-apps.svg" alt="app box design">
+      </div>
+      <div class="illustrations-box">
+        <p>Illustrations</p>
+        <img class="pattern-illustration" src="assets/pattern-illustrations.svg" alt="illustration design">
+      </div>
+      <div class="photo-box">
+        <p>Photography</p>
+        <img class="pattern-photo-img" src="assets/pattern-photography.svg" alt="pattern photography">
+      </div>
+      <div class="motion-graphics-box">
+        <p>Motion Graphics</p>
+        <img class="pattern-motion-graphic" src="assets/pattern-motion-graphics.svg" alt="pattern motion graphics">
+      </div>
+    </div>
 ```
 ```css
-
+.grid-row-spread {
+    display: grid;
+    gap: 1rem;
+    grid-template-areas:
+        "graphic ux apps"
+        "graphic illustration illustration"
+        "photo motion motion";
+    grid-template-columns: repeat(1, 1fr);
+    justify-content: center;
+}
 ```
 ```js
+nextButton.addEventListener("click", () => {
+  const maxScrollLeft =
+    slidesContainer.scrollWidth - slidesContainer.clientWidth;
 
+  if (Math.ceil(slidesContainer.scrollLeft) >= maxScrollLeft) {
+    slidesContainer.scrollLeft = 0;
+  } else {
+    slidesContainer.scrollLeft += slideWidth;
+  }
+});
 ```
 
 ### Continued development
 
-Use this section to outline areas that you want to continue focusing on in future projects. These could be concepts you're still not completely comfortable with or techniques you found useful that you want to refine and perfect.
+While I’ve built several one-page layouts before, this challenge pushed me to refine how I approach responsiveness and component structure. Once I’m more confident with those concepts, I plan to explore frameworks for both JavaScript and CSS to expand my workflow. Each project gives me something new to take forward — whether that’s writing cleaner code, thinking more modularly, or just trusting my process. The learning never really stops, and that’s what keeps it exciting.
 
 
 ### Useful resources
 
-- [Example resource 1](https://www.example.com) - This helped me for XYZ reason. I really liked this pattern and will use it going forward.
-- [Example resource 2](https://www.example.com) - This is an amazing article which helped me finally understand XYZ. I'd recommend it to anyone still learning this concept.
+- [mdn web docs](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_grid_layout) - When working on the grid section of this project, I leaned heavily on MDN Web Docs to clarify how grid-template-columns and auto-fit work in practice. Their examples helped me understand how to combine minmax() with repeat functions for responsiveness. I also referenced their explanations on alignment properties to fine-tune the spacing between items. The documentation is always clear, and I’ve made it a habit to check there when I hit a layout snag.
+- [envato](https://webdesign.tutsplus.com/how-to-build-a-simple-carousel-with-vanilla-javascript--cms-41734t) - Creating the JavaScript carousel started with research, and I found a helpful guide on Envato Tuts+ that explained how to build a basic scrollable image slider. It broke down the logic of scrolling by image width and controlling movement with button clicks. I adapted the approach to suit my project’s needs and used it to create a cleaner sliding experience for the “My Work” section. It gave me a good foundation to build on and customize further.
 
 
 ## Author
 
-- Website - [Add your name here](https://www.your-site.com)
-- Frontend Mentor - [@yourusername](https://www.frontendmentor.io/profile/yourusername)
-- Twitter - [@yourusername](https://www.twitter.com/yourusername)
+- Frontend Mentor - [@EAguayodev](https://www.frontendmentor.io/profile/EAguayodev)
 
 ## Acknowledgments
-
-This is where you can give a hat tip to anyone who helped you out on this project. Perhaps you worked in a team or got some inspiration from someone else's solution. This is the perfect place to give them some credit.
+Special thanks to Jemima Abu for her CodePen sample and detailed article on building JavaScript carousels. Her code offered a simple structure that helped me visualize how the scroll interaction could be tied to index tracking. I modified parts of it to fit the layout and behavior I wanted, and her breakdown made the concepts click. Huge appreciation for sharing her work — it played a big role in helping me create my own version with confidence.
